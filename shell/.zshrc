@@ -12,7 +12,6 @@ setopt SHARE_HISTORY          # share history between sessions
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="gallois"
 plugins=(git)
-source $ZSH/oh-my-zsh.sh
 
 export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
@@ -22,10 +21,11 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias cls='clear'
+alias ls='ls --color=never'
+alias ll='ls -alF --color=never'
+alias la='ls -A --color=never'
+alias l='ls -CF --color=never'alias cls='clear'
+
 alias k='kubectl'
 alias hh=hstr
 
@@ -71,6 +71,7 @@ bindkey -s "\C-r" "\C-a hstr -- \C-j"
 export HSTR_TIOCSTI=n
 
 export DOTNET_ROOT=$HOME/.dotnet
+export PATH="$PATH:/home/ihor/.dotnet/tools"
 export PATH=$HOME/.dotnet:$PATH
 
 source ~/.z.sh
@@ -79,3 +80,10 @@ eval $(opam env --switch=5.4.0)
 eval "$(zellij setup --generate-auto-start zsh)"
 
 source $ZSH/oh-my-zsh.sh
+
+unset LS_COLORS
+# export LS_COLORS="di=00:ow=00:tw=00:st=00"
+export LS_COLORS="di=01;34:ow=01;34:tw=01;34:ln=01;36:ex=01;32:*.log=33"
+export LC_TIME=en_US.UTF-8
+
+export PATH="$HOME/.local/bin:$PATH"
