@@ -229,7 +229,7 @@ load_plugins {
 }
 
 simplified_ui true
-theme "nord"
+theme "rose-pine-dawn"
 
 default_shell "zsh"
 default_mode "locked"
@@ -985,7 +985,7 @@ load_plugins {
 }
 
 simplified_ui true
-theme "pencil-light"
+theme "rose-pine-dawn"
 
 default_shell "zsh"
 default_mode "locked"
