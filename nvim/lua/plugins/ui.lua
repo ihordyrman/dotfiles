@@ -42,4 +42,33 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = { signs = false },
   },
+
+  {
+    "karb94/neoscroll.nvim",
+    opts = {},
+  },
+
+  {
+    "sphamba/smear-cursor.nvim",
+    opts = {},
+    config = function()
+      require("smear_cursor").setup({})
+
+      vim.api.nvim_create_autocmd("BufLeave", {
+        callback = function()
+          require("smear_cursor").enabled = false
+        end,
+      })
+
+      vim.api.nvim_create_autocmd("BufEnter", {
+        callback = function()
+          if vim.bo.buftype == "" then
+            vim.fn.timer_start(70, function()
+              require("smear_cursor").enabled = true
+            end)
+          end
+        end,
+      })
+    end,
+  },
 }
