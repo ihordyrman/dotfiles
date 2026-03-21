@@ -13,9 +13,11 @@ TERM = "xterm-256color"
 program = "zellij"
 
 [window]
-padding.x = 16
-padding.y = 14
-decorations = "None"
+dimensions.columns = 200
+dimensions.lines = 40
+padding.x = 12
+padding.y = 10
+decorations = "Full"
 opacity = 0.98
 
 [selection]
@@ -46,34 +48,77 @@ dimensions.lines = 40
 EOF
 
 cat << 'EOF' | sudo tee ~/.config/alacritty/theme.toml
-# Colors (One Dark)
+# Nightfox Alacritty Colors
+## name: dayfox
+## upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/dayfox/alacritty.toml
 
-# Default colors
 [colors.primary]
-background = '#282c34'
-foreground = '#abb2bf'
+background = "#f6f2ee"
+foreground = "#3d2b5a"
+dim_foreground = "#302b5d"
+bright_foreground = "#643f61"
 
-# Normal colors
+[colors.cursor]
+text = "#3d2b5a"
+cursor = "#643f61"
+
+[colors.vi_mode_cursor]
+text = "#3d2b5a"
+cursor = "#287980"
+
+[colors.search.matches]
+foreground = "#3d2b5a"
+background = "#a4c1c2"
+
+[colors.search.focused_match]
+foreground = "#3d2b5a"
+background = "#396847"
+
+[colors.footer_bar]
+foreground = "#3d2b5a"
+background = "#d3c7bb"
+
+[colors.hints.start]
+foreground = "#3d2b5a"
+background = "#955f61"
+
+[colors.hints.end]
+foreground = "#3d2b5a"
+background = "#d3c7bb"
+
+[colors.selection]
+text = "#3d2b5a"
+background = "#e7d2be"
+
 [colors.normal]
-black   = '#1e2127'
-red     = '#e06c75'
-green   = '#98c379'
-yellow  = '#d19a66'
-blue    = '#61afef'
-magenta = '#c678dd'
-cyan    = '#56b6c2'
-white   = '#abb2bf'
+black = "#352c24"
+red = "#a5222f"
+green = "#396847"
+yellow = "#ac5402"
+blue = "#2848a9"
+magenta = "#6e33ce"
+cyan = "#287980"
+white = "#f2e9e1"
 
-# Bright colors
 [colors.bright]
-black   = '#5c6370'
-red     = '#e06c75'
-green   = '#98c379'
-yellow  = '#d19a66'
-blue    = '#61afef'
-magenta = '#c678dd'
-cyan    = '#56b6c2'
-white   = '#ffffffEOF
+black = "#534c45"
+red = "#b3434e"
+green = "#577f63"
+yellow = "#b86e28"
+blue = "#4863b6"
+magenta = "#8452d5"
+cyan = "#488d93"
+white = "#f4ece6"
+
+[colors.dim]
+black = "#2d251f"
+red = "#8c1d28"
+green = "#30583c"
+yellow = "#924702"
+blue = "#223d90"
+magenta = "#5e2baf"
+cyan = "#22676d"
+white = "#cec6bf"
 EOF
 
 cat << 'EOF' | sudo tee ~/.config/alacritty/font.toml

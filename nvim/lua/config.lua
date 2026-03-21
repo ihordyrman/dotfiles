@@ -19,7 +19,7 @@ vim.o.breakindent = true
 -- Save undo history
 vim.o.undofile = true
 
-vim.o.paste = true
+-- vim.o.paste = true
 vim.o.ignorecase = true
 vim.o.clipboard = "unnamedplus"
 

@@ -1,12 +1,10 @@
 return {
   {
-    "projekt0n/github-nvim-theme",
-    name = "github-theme",
+    "EdenEast/nightfox.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      require("github-theme").setup({})
-      vim.cmd("colorscheme github_light")
+      vim.cmd("colorscheme dayfox")
     end,
   },
 
@@ -42,6 +40,10 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = { signs = false },
   },
+
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+
+  { "HiPhish/rainbow-delimiters.nvim" },
 
   {
     "karb94/neoscroll.nvim",

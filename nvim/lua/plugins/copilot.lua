@@ -10,8 +10,12 @@ return {
         desc = "Accept Copilot suggestion",
       })
       vim.keymap.set("i", "<C-]>", "<Plug>(copilot-next)", { desc = "Next Copilot suggestion" })
-      vim.keymap.set("i", "<C-[>", "<Plug>(copilot-prev)", { desc = "Prev Copilot suggestion" })
-      vim.keymap.set("i", "<C-e>", "<Plug>(copilot-dismiss)", { desc = "Dismiss Copilot suggestion" })
+      vim.keymap.set(
+        "i",
+        "<C-e>",
+        "<Plug>(copilot-dismiss)",
+        { desc = "Dismiss Copilot suggestion" }
+      )
     end,
   },
 }

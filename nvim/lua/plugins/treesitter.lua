@@ -17,6 +17,12 @@ return {
         "vim",
         "vimdoc",
         "c_sharp",
+        "json",
+        "css",
+        "javascript",
+        "typescript",
+        "yaml",
+        "xml",
       },
       auto_install = true,
       highlight = {

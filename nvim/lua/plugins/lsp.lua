@@ -27,6 +27,7 @@ return {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       { "j-hui/fidget.nvim", opts = {} },
       "saghen/blink.cmp",
+      "b0o/schemastore.nvim",
     },
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -138,6 +139,36 @@ return {
           },
         },
 
+        marksman = {},
+
+        jsonls = {
+          settings = {
+            json = {
+              schemas = require("schemastore").json.schemas(),
+              validate = { enable = true },
+            },
+          },
+        },
+
+        html = {},
+
+        cssls = {},
+
+        ts_ls = {},
+
+        eslint = {},
+
+        yamlls = {
+          settings = {
+            yaml = {
+              schemaStore = { enable = false, url = "" },
+              schemas = require("schemastore").yaml.schemas(),
+            },
+          },
+        },
+
+        lemminx = {},
+
       }
       -- ────────────────────────────────────────────────────────────────────────
 
@@ -149,6 +180,8 @@ return {
         "fantomas",
         "fsautocomplete",
         "csharpier",
+        "prettier",
+        "xmlformatter",
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
