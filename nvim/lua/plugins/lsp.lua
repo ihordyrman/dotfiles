@@ -116,15 +116,6 @@ return {
           },
         },
 
-        fsautocomplete = {
-          settings = {
-            FSharp = {
-              enableReferenceCodeLens = true,
-              useSdkScripts = true,
-            },
-          },
-        },
-
         ocamllsp = {
           settings = {
             codelens = { enable = true },
@@ -178,7 +169,6 @@ return {
         "ocamlformat",
         "ocamllsp",
         "fantomas",
-        "fsautocomplete",
         "csharpier",
         "prettier",
         "xmlformatter",

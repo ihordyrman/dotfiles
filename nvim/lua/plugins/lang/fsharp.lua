@@ -3,7 +3,6 @@ return {
     "ionide/Ionide-vim",
     ft = { "fsharp" },
     init = function()
-      vim.g["fsharp#lsp_auto_setup"] = 0
       vim.g["fsharp#fsi_command"] = "dotnet fsi"
       vim.g["fsharp#fsi_keymap"] = "none"
       vim.g["fsharp#show_signature_on_cursor_move"] = 1
