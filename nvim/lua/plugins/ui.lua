@@ -37,6 +37,17 @@ return {
   { "HiPhish/rainbow-delimiters.nvim" },
 
   {
+    "andweeb/presence.nvim",
+    opts = {
+      main_image = "file",
+      show_time = true,
+      editing_text = "Editing %s",
+      workspace_text = "Working on %s",
+      reading_text = "Reading %s",
+    },
+  },
+
+  {
     "karb94/neoscroll.nvim",
     opts = {},
   },
