@@ -7,14 +7,34 @@ return {
       icons = {
         mappings = vim.g.have_nerd_font,
         keys = vim.g.have_nerd_font and {} or {
-          Up = "<Up> ", Down = "<Down> ", Left = "<Left> ", Right = "<Right> ",
-          C = "<C-…> ", M = "<M-…> ", D = "<D-…> ", S = "<S-…> ",
-          CR = "<CR> ", Esc = "<Esc> ", ScrollWheelDown = "<ScrollWheelDown> ",
-          ScrollWheelUp = "<ScrollWheelUp> ", NL = "<NL> ", BS = "<BS> ",
-          Space = "<Space> ", Tab = "<Tab> ",
-          F1 = "<F1>", F2 = "<F2>", F3 = "<F3>", F4 = "<F4>",
-          F5 = "<F5>", F6 = "<F6>", F7 = "<F7>", F8 = "<F8>",
-          F9 = "<F9>", F10 = "<F10>", F11 = "<F11>", F12 = "<F12>",
+          Up = "<Up> ",
+          Down = "<Down> ",
+          Left = "<Left> ",
+          Right = "<Right> ",
+          C = "<C-…> ",
+          M = "<M-…> ",
+          D = "<D-…> ",
+          S = "<S-…> ",
+          CR = "<CR> ",
+          Esc = "<Esc> ",
+          ScrollWheelDown = "<ScrollWheelDown> ",
+          ScrollWheelUp = "<ScrollWheelUp> ",
+          NL = "<NL> ",
+          BS = "<BS> ",
+          Space = "<Space> ",
+          Tab = "<Tab> ",
+          F1 = "<F1>",
+          F2 = "<F2>",
+          F3 = "<F3>",
+          F4 = "<F4>",
+          F5 = "<F5>",
+          F6 = "<F6>",
+          F7 = "<F7>",
+          F8 = "<F8>",
+          F9 = "<F9>",
+          F10 = "<F10>",
+          F11 = "<F11>",
+          F12 = "<F12>",
         },
       },
       spec = {
@@ -34,7 +54,34 @@ return {
 
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
-  { "HiPhish/rainbow-delimiters.nvim" },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    config = function()
+      require("rainbow-delimiters.setup").setup({
+        strategy = {
+          [""] = require("rainbow-delimiters").strategy["global"],
+          vim = require("rainbow-delimiters").strategy["local"],
+        },
+        query = {
+          [""] = "rainbow-delimiters",
+          lua = "rainbow-blocks",
+        },
+        priority = {
+          [""] = 110,
+          lua = 210,
+        },
+        highlight = {
+          "RainbowDelimiterRed",
+          "RainbowDelimiterYellow",
+          "RainbowDelimiterBlue",
+          "RainbowDelimiterOrange",
+          "RainbowDelimiterGreen",
+          "RainbowDelimiterViolet",
+          "RainbowDelimiterCyan",
+        },
+      })
+    end,
+  },
 
   {
     "rachartier/tiny-inline-diagnostic.nvim",
@@ -84,17 +131,13 @@ return {
       require("smear_cursor").setup({})
 
       vim.api.nvim_create_autocmd("BufLeave", {
-        callback = function()
-          require("smear_cursor").enabled = false
-        end,
+        callback = function() require("smear_cursor").enabled = false end,
       })
 
       vim.api.nvim_create_autocmd("BufEnter", {
         callback = function()
           if vim.bo.buftype == "" then
-            vim.fn.timer_start(70, function()
-              require("smear_cursor").enabled = true
-            end)
+            vim.fn.timer_start(70, function() require("smear_cursor").enabled = true end)
           end
         end,
       })

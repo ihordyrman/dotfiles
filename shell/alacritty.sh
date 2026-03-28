@@ -51,80 +51,34 @@ dimensions.lines = 40
 EOF
 
 cat << 'EOF' | sudo tee ~/.config/alacritty/theme.toml
-# Colors section of "Alacritty - TOML configuration file format"
-# https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd#colors
+# Colors (Everforest Light)
 
+# Default colors
 [colors.primary]
-foreground = "#575279"
-background = "#faf4ed"
-dim_foreground = "#797593"
-bright_foreground = "#575279"
+background = '#fdf6e3'
+foreground = '#5c6a72'
 
-[colors.cursor]
-text = "#575279"
-cursor = "#cecacd"
-
-[colors.vi_mode_cursor]
-text = "#575279"
-cursor = "#cecacd"
-
-[colors.search.matches]
-foreground = "#797593"
-background = "#f2e9e1"
-
-[colors.search.focused_match]
-foreground = "#faf4ed"
-background = "#d7827e"
-
-[colors.hints.start]
-foreground = "#797593"
-background = "#fffaf3"
-
-[colors.hints.end]
-foreground = "#9893a5"
-background = "#fffaf3"
-
-[colors.line_indicator]
-foreground = "None"
-background = "None"
-
-[colors.footer_bar]
-foreground = "#575279"
-background = "#fffaf3"
-
-[colors.selection]
-text = "#575279"
-background = "#dfdad9"
-
+# Normal colors
 [colors.normal]
-black = "#f2e9e1"
-red = "#b4637a"
-green = "#286983"
-yellow = "#ea9d34"
-blue = "#56949f"
-magenta = "#907aa9"
-cyan = "#d7827e"
-white = "#575279"
+black = '#5c6a72'
+red = '#f85552'
+green = '#8da101'
+yellow = '#dfa000'
+blue = '#3a94c5'
+magenta = '#df69ba'
+cyan = '#35a77c'
+white = '#e0dcc7'
 
+# Bright Colors
 [colors.bright]
-black = "#9893a5"
-red = "#b4637a"
-green = "#286983"
-yellow = "#ea9d34"
-blue = "#56949f"
-magenta = "#907aa9"
-cyan = "#d7827e"
-white = "#575279"
-
-[colors.dim]
-black = "#9893a5"
-red = "#b4637a"
-green = "#286983"
-yellow = "#ea9d34"
-blue = "#56949f"
-magenta = "#907aa9"
-cyan = "#d7827e"
-white = "#575279"
+black = '#5c6a72'
+red = '#f85552'
+green = '#8da101'
+yellow = '#dfa000'
+blue = '#3a94c5'
+magenta = '#df69ba'
+cyan = '#35a77c'
+white = '#e0dcc7'
 EOF
 
 cat << 'EOF' | sudo tee ~/.config/alacritty/font.toml
@@ -132,5 +86,5 @@ cat << 'EOF' | sudo tee ~/.config/alacritty/font.toml
 normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
 bold = { family = "JetBrainsMono Nerd Font Mono", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic" }
-size = 9
+size = 11
 EOF

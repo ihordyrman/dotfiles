@@ -20,9 +20,8 @@ exec --no-startup-id ssh-add ~/.ssh/github
 # start dmenu (a program launcher)
 bindsym $super+d exec i3-dmenu-desktop --dmenu="dmenu -i -b -fn 'Poppins:size=9' -nb '#f9faf4' -nf '#3b4d4f' -sb '#68c7c1' -sf '#3b4d4f'"
 
-
-assign [class="Microsoft|Super"] $ws1
-assign [class="Slack|Discord|Telegram|Signal"] $ws2
+assign [class="Microsoft|Super|Obsidian|qBittorrent|Steam"] $ws1
+assign [class="Slack|discord|Telegram|Signal"] $ws2
 assign [class="Rider|Alacritty"] $ws3
 
 # Use pactl to adjust volume in PulseAudio.
@@ -175,9 +174,9 @@ mode "resize" {
 bindsym $super+r mode "resize"
 
 # screenshots
-bindsym Print exec xfce4-screenshooter -f -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
-bindsym Shift+Print exec xfce4-screenshooter -r -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec xfce4-screenshooter -w -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
+bindsym $super+p exec xfce4-screenshooter -f -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
+bindsym $super+Shift+p exec xfce4-screenshooter -r -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
+bindsym $super+Ctrl+p exec xfce4-screenshooter -w -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
 
 bar {
         status_command i3status -c /home/$USER/.config/i3status/i3status.conf
@@ -212,6 +211,9 @@ client.background #dbd9da
 # window rules, you can find the window class using xprop
 for_window [class=gwenview|Eog|Sxiv|feh|spectacle|mpv|vlc|ark|File-roller|Xarchiver] floating enable
 for_window [class=gwenview|Eog|Sxiv|feh|spectacle|mpv|vlc|ark|File-roller|Xarchiver] focus
+for_window [class="Microsoft|Super|Obsidian|qBittorrent"] layout tabbed
+for_window [class="Slack|Discord|Telegram|Signal"] layout tabbed
+for_window [class="Rider|Alacritty"] layout tabbed
 for_window [class=".*"] border pixel 5
 hide_edge_borders smart
 # gaps inner 5
