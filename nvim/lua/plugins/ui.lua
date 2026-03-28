@@ -37,6 +37,24 @@ return {
   { "HiPhish/rainbow-delimiters.nvim" },
 
   {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "LspAttach",
+    priority = 1000,
+    opts = {
+      signs = {
+        left = "",
+        right = "",
+        diag = "●",
+        arrow = "    ",
+        up_arrow = "    ",
+        vertical = " │",
+        vertical_end = " └",
+      },
+      blend = { factor = 0.22 },
+    },
+  },
+
+  {
     "andweeb/presence.nvim",
     opts = {
       main_image = "file",

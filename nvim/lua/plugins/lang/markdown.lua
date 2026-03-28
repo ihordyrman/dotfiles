@@ -5,7 +5,12 @@ return {
     ft = "markdown",
     build = "cd app && npm install",
     keys = {
-      { "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", ft = "markdown", desc = "[M]arkdown [P]review" },
+      {
+        "<leader>mp",
+        "<cmd>MarkdownPreviewToggle<CR>",
+        ft = "markdown",
+        desc = "[M]arkdown [P]review",
+      },
     },
   },
 
@@ -74,9 +79,7 @@ return {
       require("obsidian").setup(opts)
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "markdown",
-        callback = function()
-          vim.o.conceallevel = 2
-        end,
+        callback = function() vim.o.conceallevel = 2 end,
       })
     end,
   },

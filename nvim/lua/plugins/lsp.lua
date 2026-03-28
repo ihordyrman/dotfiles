@@ -12,6 +12,24 @@ return {
   {
     "saghen/blink.cmp",
     version = "*",
+    opts = {
+      keymap = {
+        preset = "default",
+        ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+        ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+        ["<CR>"] = { "select_and_accept", "fallback" },
+      },
+      completion = {
+        list = { selection = { preselect = true } },
+      },
+      snippets = { preset = "luasnip" },
+      sources = {
+        default = { "lsp", "path", "snippets", "buffer" },
+        providers = {
+          snippets = { score_offset = 5 },
+        },
+      },
+    },
   },
 
   {
@@ -98,11 +116,7 @@ return {
             [vim.diagnostic.severity.HINT] = "󰌶 ",
           },
         } or {},
-        virtual_text = {
-          source = "if_many",
-          spacing = 2,
-          format = function(diagnostic) return diagnostic.message end,
-        },
+        virtual_text = false,
       })
 
       local capabilities = require("blink.cmp").get_lsp_capabilities()

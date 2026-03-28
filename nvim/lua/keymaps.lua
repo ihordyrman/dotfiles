@@ -4,6 +4,8 @@
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Show diagnostic float" })
+
 vim.keymap.set("n", "<C-Up>", "<Up>ddp<Up>", { desc = "Move line up" })
 vim.keymap.set("n", "<C-Down>", "ddp", { desc = "Move line down" })
 vim.keymap.set("i", "<C-p>", "<Plug>(copilot-prev)", { desc = "Prev Copilot suggestion" })
