@@ -11,25 +11,25 @@ exec --no-startup-id /usr/libexec/polkit-kde-authentication-agent-1 &
 exec --no-startup-id /usr/libexec/pam_kwallet_init &
 exec --no-startup-id kwalletd6 &
 exec --no-startup-id xsettingsd &
-exec --no-startup-id hsetroot -fill ~/OneDrive/Pictures/mountain.png
+exec --no-startup-id tlp start
 
 # additional stuff
-exec --no-startup-id xrandr --output eDP-1 --off
+exec --no-startup-id xrandr --output eDP-1 --off --output DP-4 --mode 2560x1440 --dpi 96 && hsetroot -fill ~/OneDrive/Pictures/mountain.png
 exec --no-startup-id ssh-add ~/.ssh/github
 
 # start dmenu (a program launcher)
 bindsym $super+d exec i3-dmenu-desktop --dmenu="dmenu -i -b -fn 'Poppins:size=9' -nb '#f9faf4' -nf '#3b4d4f' -sb '#68c7c1' -sf '#3b4d4f'"
 
 
-assign [class="firefox"] $ws1
+assign [class="Microsoft|Super"] $ws1
 assign [class="Slack|Discord|Telegram|Signal"] $ws2
 assign [class="Rider|Alacritty"] $ws3
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym Shift+Insert exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym Shift+F12 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym Shift+F11 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$super to drag floating windows to their wanted position
@@ -174,8 +174,13 @@ mode "resize" {
 
 bindsym $super+r mode "resize"
 
+# screenshots
+bindsym Print exec xfce4-screenshooter -f -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
+bindsym Shift+Print exec xfce4-screenshooter -r -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec xfce4-screenshooter -w -c --save /dev/stdout | xclip -i -selection clipboard -t image/png
+
 bar {
-    status_command i3status -c /home/$USER/.config/i3status/i3status.conf
+        status_command i3status -c /home/$USER/.config/i3status/i3status.conf
 	workspace_min_width 48
 	position top
 	strip_workspace_numbers yes
@@ -192,6 +197,10 @@ bar {
 	}
 }
 
+# bar toggle
+bindsym $super+m bar mode invisible
+bindsym $super+n bar mode dock
+
 # colour of border, background, text, indicator, and child_border
 client.focused #e46c6d #ffffff #3b4d4f #b899a8 #819fc1
 client.focused_inactive #dbd9da #e9ffdb #3b4d4f #dbd9da #dbd9da
@@ -207,3 +216,6 @@ for_window [class=".*"] border pixel 5
 hide_edge_borders smart
 # gaps inner 5
 smart_gaps on
+
+focus_wrapping no
+focus_follows_mouse no
