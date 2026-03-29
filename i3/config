@@ -180,14 +180,14 @@ bar {
 	strip_workspace_numbers yes
 
 	colors {
-    		background #ffffff
-    		statusline #2d3748
-    		separator #e2e8f0
+    		background #fffbef
+    		statusline #5c6a72
+    		separator #bec5b2
     		# colour of border, background, and text
-    		focused_workspace #4299e1 #4299e1 #ffffff
-    		active_workspace #e2e8f0 #f7fafc #2d3748
-    		inactive_workspace #ffffff #ffffff #718096
-    		urgent_workspace #fc8181 #fc8181 #ffffff
+    		focused_workspace  #8da101 #8da101 #fffbef
+    		active_workspace   #e8e5d5 #f2efdf #5c6a72
+    		inactive_workspace #fffbef #fffbef #939f91
+    		urgent_workspace   #f85552 #ffe7de #5c6a72
 	}
 }
 
@@ -196,12 +196,12 @@ bindsym $super+m bar mode invisible
 bindsym $super+n bar mode dock
 
 # colour of border, background, text, indicator, and child_border
-client.focused #e46c6d #ffffff #3b4d4f #b899a8 #819fc1
-client.focused_inactive #dbd9da #e9ffdb #3b4d4f #dbd9da #dbd9da
-client.unfocused #dbd9da #dbd9da #3b4d4f #dbd9da #dbd9da
-client.urgent #dbd9da #dbd9da #3b4d4f #dbd9da #dbd9da
-client.placeholder #dbd9da #dbd9da #3b4d4f #dbd9da #dbd9da
-client.background #dbd9da
+client.focused          #8da101 #fffbef #5c6a72 #3a94c5 #8da101
+client.focused_inactive #e8e5d5 #f2efdf #5c6a72 #e8e5d5 #e8e5d5
+client.unfocused        #edeada #f2efdf #939f91 #edeada #edeada
+client.urgent           #f85552 #ffe7de #5c6a72 #f85552 #f85552
+client.placeholder      #e8e5d5 #f2efdf #939f91 #e8e5d5 #e8e5d5
+client.background       #fffbef
 
 # window rules, you can find the window class using xprop
 for_window [class=gwenview|Eog|Sxiv|feh|spectacle|mpv|vlc|ark|File-roller|Xarchiver] floating enable

@@ -55,8 +55,11 @@ cat << 'EOF' | sudo tee ~/.config/alacritty/theme.toml
 
 # Default colors
 [colors.primary]
-background = '#fdf6e3'
+background = '#fffbef'
 foreground = '#5c6a72'
+
+[colors.selection]
+background = '#f0f2d4'
 
 # Normal colors
 [colors.normal]
@@ -67,7 +70,7 @@ yellow = '#dfa000'
 blue = '#3a94c5'
 magenta = '#df69ba'
 cyan = '#35a77c'
-white = '#e0dcc7'
+white = '#bec5b2'
 
 # Bright Colors
 [colors.bright]
@@ -78,7 +81,7 @@ yellow = '#dfa000'
 blue = '#3a94c5'
 magenta = '#df69ba'
 cyan = '#35a77c'
-white = '#e0dcc7'
+white = '#e8e5d5'
 EOF
 
 cat << 'EOF' | sudo tee ~/.config/alacritty/font.toml
