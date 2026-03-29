@@ -7,11 +7,13 @@ return {
     vim.o.background = "light"
 
     require("everforest").setup({
-      -- background = "soft",
-      -- ui_contrast = "low",
-      -- dim_inactive_windows = true,
-      -- diagnostic_virtual_text = "coloured",
-      -- inlay_hints_background = "dimmed",
+      italics = false,
+      disable_italic_comments = true,
+      background = "medium",
+      transparent_background_level = 0,
+      ui_contrast = "low",
+      dim_inactive_windows = false,
+      diagnostic_virtual_text = "coloured",
       float_style = "bright",
     })
 

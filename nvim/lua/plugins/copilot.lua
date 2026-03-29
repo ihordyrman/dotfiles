@@ -1,5 +1,18 @@
 return {
   {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", branch = "master" },
+    },
+    build = "make tiktoken",
+    opts = {
+      sticky = {
+        "#buffers:visible",
+      },
+      model = "claude-sonnet-4.6",
+    },
+  },
+  {
     "github/copilot.vim",
     event = "InsertEnter",
     config = function()

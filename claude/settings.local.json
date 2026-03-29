@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls ~/.joplin*)",
+      "Read(//opt/**)",
+      "Bash(snap list:*)",
+      "Bash(flatpak list:*)",
+      "Bash(dpkg -l)",
+      "Bash(find /home/ihor -maxdepth 4 -iname *joplin*)",
+      "Bash(find /home/ihor/.local -iname *joplin*)"
+    ]
+  }
+}

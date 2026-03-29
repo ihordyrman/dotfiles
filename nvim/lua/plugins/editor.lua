@@ -1,4 +1,14 @@
 return {
+  {
+    "https://git.sr.ht/~nedia/auto-save.nvim",
+    event = { "BufReadPre" },
+    opts = {
+      events = { "InsertLeave", "BufLeave" },
+      silent = true,
+      exclude_ft = { "nvim-tree" },
+    },
+  },
+
   "NMAC427/guess-indent.nvim",
 
   { "akinsho/git-conflict.nvim", version = "*", config = true },

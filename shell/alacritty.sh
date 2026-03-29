@@ -14,11 +14,11 @@ program = "zellij"
 
 [window]
 dimensions.columns = 200
-dimensions.lines = 40
-padding.x = 12
-padding.y = 10
-decorations = "Full"
-opacity = 0.98
+dimensions.lines = 50
+padding.x = 5
+padding.y = 5
+decorations = "none"
+opacity = 0.95
 
 [selection]
 save_to_clipboard = true

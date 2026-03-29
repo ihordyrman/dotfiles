@@ -1,7 +1,7 @@
 set $super Mod4
 set $alt Mod1
 
-font pango:JetBransMono Nerd Font Mono 8
+font pango:JetBransMono Nerd Font Mono 9
 
 # autostart
 exec --no-startup-id dex --autostart --environment i3
@@ -20,7 +20,7 @@ exec --no-startup-id ssh-add ~/.ssh/github
 # start dmenu (a program launcher)
 bindsym $super+d exec i3-dmenu-desktop --dmenu="dmenu -i -b -fn 'Poppins:size=9' -nb '#f9faf4' -nf '#3b4d4f' -sb '#68c7c1' -sf '#3b4d4f'"
 
-assign [class="Microsoft|Super|Obsidian|qBittorrent|Steam"] $ws1
+assign [class="Microsoft|Super|Obsidian|qBittorrent|Steam|calibre"] $ws1
 assign [class="Slack|discord|Telegram|Signal"] $ws2
 assign [class="Rider|Alacritty"] $ws3
 
@@ -107,13 +107,8 @@ bindsym $super+a focus parent
 set $ws1 "1: Main"
 set $ws2 "2: Communication"
 set $ws3 "3: Code"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws4 "4: Other"
+
 
 # switch to workspace
 bindsym $super+1 workspace number $ws1
@@ -211,8 +206,8 @@ client.background #dbd9da
 # window rules, you can find the window class using xprop
 for_window [class=gwenview|Eog|Sxiv|feh|spectacle|mpv|vlc|ark|File-roller|Xarchiver] floating enable
 for_window [class=gwenview|Eog|Sxiv|feh|spectacle|mpv|vlc|ark|File-roller|Xarchiver] focus
-for_window [class="Microsoft|Super|Obsidian|qBittorrent"] layout tabbed
-for_window [class="Slack|Discord|Telegram|Signal"] layout tabbed
+for_window [class="Microsoft|Super|Obsidian|qBittorrent|calibre|Steam"] layout tabbed
+for_window [class="Slack|discord|Telegram|Signal"] layout tabbed
 for_window [class="Rider|Alacritty"] layout tabbed
 for_window [class=".*"] border pixel 5
 hide_edge_borders smart
